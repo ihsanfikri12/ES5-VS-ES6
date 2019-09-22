@@ -180,10 +180,118 @@
 // number6(23)
 
 // --------Maps---------
-const age = new Map();
-age.set('question',"what is your age ?");
-age.set(1, 12);
-age.set(2, 10);
+// const age = new Map();
+// age.set('question',"what is your age ?");
+// age.set(1, 12);
+// age.set(2, 10);
 
-console.log(age.get('question'));
-console.log(age.entries());
+// console.log(age.get('question'));
+// console.log(age.entries());
+
+//--------Class----------
+
+// Example ES5
+
+// function people(name,year,job) {
+//     this.name = name;
+//     this.year = year;
+//     this.job = job;
+// }
+
+// people.prototype.born = function () {
+//     console.log(2016-this.year)
+// }
+
+// var nabil = new people ('nabil',1990,'teacher');
+
+// nabil.born()
+
+// Example ES6
+// class people {
+//     constructor (name,year,job) {
+//         this.name = name;
+//         this.year = year;
+//         this.job = job;
+//     }
+
+//     calculateAge () {
+//         var age = 2019 - this.year;
+//         console.log(age);
+//     }
+
+//     static greeting () {
+//         console.log('Hi');
+//     }
+// }
+
+// const nabil = new people ('nabil',2002,'programmer');
+
+// nabil.calculateAge();
+// people.greeting();  
+
+//------- Subs Classes --------
+
+// Example ES5
+
+// function people(name,year,job) {
+//     this.name = name;
+//     this.year = year;
+//     this.job = job;
+// }
+
+// people.prototype.born = function () {
+//     console.log(2016-this.year)
+// }
+
+// var programmer = function(name,year,job,codingLanguage) {
+//     people.call(this,name,year,job);
+//     this.codingLanguage = codingLanguage;
+// }
+
+// programmer.prototype = Object.create(people.prototype);
+
+// programmer.prototype.skill = function(Skill) {
+//     console.log('Javascript');
+// }
+
+// var nabil = new programmer ('nabil',1990,'java');
+
+// nabil.born()
+// nabil.skill();
+
+// Example ES6
+
+class people {
+    constructor (name,year,job) {
+        this.name = name;
+        this.year = year;
+        this.job = job;
+    }
+
+    calculateAge () {
+        var age = 2019 - this.year;
+        console.log(age);
+    }
+
+    static greeting () {
+        console.log('Hi');
+    }
+}
+
+class programmer extends people {
+    constructor (name,year,job,codingLanguage) {
+        super(name,year,job);
+        this.codingLanguage = codingLanguage;
+    }
+
+    skill() {
+        console.log(`My Skill is ${this.codingLanguage}`);
+    }
+}
+
+const nabil = new programmer ('nabil',2002,'programmer', 'C++');
+
+nabil.calculateAge();
+nabil.skill() 
+
+
