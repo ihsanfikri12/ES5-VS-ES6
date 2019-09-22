@@ -98,3 +98,64 @@
 
 // rasya.work6(work)
 
+//------- Destructuring ------
+
+// var jobs = {
+//     jobName: "programming",
+//     jobSallary: 20000000
+// }
+
+// Example ES5
+// var name = ["hanif","rasya"]
+// var hanif = name[0];
+// var rasya = name[1];
+
+// console.log(hanif,rasya);
+
+// var jobName = jobs.jobName;
+// var sallary = jobs.jobSallary;
+
+// console.log(jobName,sallary);
+
+// Example ES6
+// const [hanif,rasya] = ["hanif","rasya"]
+// console.log(hanif,rasya);
+
+// const {jobName,jobSallary} = jobs;
+// console.log(jobName,jobSallary)
+
+//------- Spread Operator ------
+
+// function addNames(a,b,c) {
+//     return a + b + c
+// }
+
+// Example ES5
+// var names = ['fikri','ihsanul','abiyyu'];
+// var names2 = addNames.apply(null,names);
+// console.log(names2)
+
+// Example ES6
+// const name3 = addNames(...names);
+// console.log(name3)
+
+//------- Rest Operator ------
+
+//Example ES5
+
+// function names() {
+//     var arrNames = Array.prototype.slice.call(arguments,1)
+
+//     arrNames.forEach(function(el){
+//         console.log(el);
+//     })
+// }
+
+// names('sarah','hanifah');
+
+//Example ES6
+// function names6(...names) {
+//     names.forEach(el=>console.log(el));
+// }
+
+// names6('arif','widya')
