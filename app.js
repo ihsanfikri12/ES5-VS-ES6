@@ -159,3 +159,31 @@
 // }
 
 // names6('arif','widya')
+
+// ------- Default Parameter --------
+
+// Example ES5 
+// function number(number1, number2) {
+//     number1 === undefined ? number1 = 12 : number1 = number1;
+//     number2 === undefined ? number2 = 10 : number2 = number2;
+
+//     console.log(number1,number2);
+// }
+
+// number()
+
+// Example ES6 
+// function number6(number1=12,number2=10) {
+//     console.log(number1,number2);
+// }
+
+// number6(23)
+
+// --------Maps---------
+const age = new Map();
+age.set('question',"what is your age ?");
+age.set(1, 12);
+age.set(2, 10);
+
+console.log(age.get('question'));
+console.log(age.entries());
